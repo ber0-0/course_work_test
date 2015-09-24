@@ -1,0 +1,19 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"R_markdown_note\"\noutput: \n  html_document: \n    keep_md: yes\n    toc: yes\n---\n\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = TRUE)\n```\n\n## R Markdown Practice\n\n\n\n```{r, echo=FALSE}\n\nenrollment <- read.csv(\"https://gist.githubusercontent.com/jennybc/924fe242a31e0239762f/raw/ea615f4a811a6e9e8a1fe95020a4407785181a21/2015_STAT545_enrollment.csv\")\n```\n\nHere is an enrollment summary table for STAT545:\n\n```{r}\nlibrary(ggplot2)\nsummary(enrollment)\n```\n\n## Including Plots\n\nYou can also embed plots, for example:\n\n```{r barplot}\n\np <- ggplot(enrollment, aes(x =Subject, y = Masters, fill = Subject))\n\np + geom_bar(stat=\"identity\") + theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5))\n```\n\nNote that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.\n",
+    "created" : 1443123999761.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "395060276",
+    "id" : "49772214",
+    "lastKnownWriteTime" : 1443123923,
+    "path" : "~/Documents/R course /R_markdown_note.Rmd",
+    "project_path" : "R_markdown_note.Rmd",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

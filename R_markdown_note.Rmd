@@ -1,0 +1,41 @@
+---
+title: "R_markdown_note"
+output: 
+  html_document: 
+    keep_md: yes
+    toc: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown Practice
+
+
+
+```{r, echo=FALSE}
+
+enrollment <- read.csv("https://gist.githubusercontent.com/jennybc/924fe242a31e0239762f/raw/ea615f4a811a6e9e8a1fe95020a4407785181a21/2015_STAT545_enrollment.csv")
+```
+
+Here is an enrollment summary table for STAT545:
+
+```{r}
+library(ggplot2)
+summary(enrollment)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r barplot}
+
+p <- ggplot(enrollment, aes(x =Subject, y = Masters, fill = Subject))
+
+p + geom_bar(stat="identity") + theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5))
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
